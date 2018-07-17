@@ -3,6 +3,8 @@ package fr.formation.puissance4.Joueur;
 import fr.formation.puissance4.Board.Board;
 import javafx.scene.paint.Color;
 
+import java.util.Scanner;
+
 public class JoueurHumain extends Joueur{
         public JoueurHumain(Color color, Board board) {
             super(color, board);
@@ -15,6 +17,15 @@ public class JoueurHumain extends Joueur{
         else
             return "4,4,YELLOW";
     }
+    @Override
+    public String remplir(){
+        System.out.println("Chousir la case a jouer !");
+        Scanner sc = new Scanner(System.in);
+        sc.nextInt();
+        
+            return "";
+    }
+
 
     @Override
     public void recevoir(String messageRecu) {
