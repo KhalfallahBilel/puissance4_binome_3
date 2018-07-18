@@ -67,7 +67,7 @@ public class JoueurHumain extends Joueur {
 
         int ligne;
 
-        for (ligne = -1; ligne < board.getJetons().length; ligne++) {
+        for (ligne = -1; ligne < board.getJetons().length-1; ligne++) {
 
             if (!board.getJetons()[ligne + 1][colonne].getColor().equals(Color.TRANSPARENT)) {
                 if (ligne == -1) {
