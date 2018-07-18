@@ -64,26 +64,16 @@ public class JoueurHumain extends Joueur {
 
     //le systeme vérifie si la case est vide ou pas
     public int remplirLigne(int colonne) throws ColonneRemplieException {
-
         int ligne;
-
         for (ligne = -1; ligne < board.getJetons().length-1; ligne++) {
-
             if (!board.getJetons()[ligne + 1][colonne].getColor().equals(Color.TRANSPARENT)) {
                 if (ligne == -1) {
-
                     throw new ColonneRemplieException();
-
                 }
-
                 return ligne;
-
             }
-
         }
-
         return ligne;
-
     }
 
     public boolean estGagne(Joueur joueur) {
