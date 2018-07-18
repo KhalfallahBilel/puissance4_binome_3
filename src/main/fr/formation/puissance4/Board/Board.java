@@ -9,6 +9,7 @@ public class Board {
         this.jetons = jetons;
     }
 
+
     public Jeton[][] getJetons() {
         return jetons;
     }

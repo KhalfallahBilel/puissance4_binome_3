@@ -13,12 +13,14 @@ public abstract class Joueur {
     }
 
     public abstract String remplirCase();
-    public abstract boolean verifDispo();
+    //public abstract boolean verifDispo();
 
 
     public abstract String envoyer();
 
-    public abstract String remplir();
+
+
+    public abstract String remplir(Joueur joueur);
 
     public abstract void recevoir(String messageRecu);
 }
