@@ -37,16 +37,16 @@ public class JoueurHumain extends Joueur {
 
     @Override
     public String envoyer() {
-       /* if (Color.RED.equals(color))
+        if (Color.RED.equals(color))
             return "4,4,RED";
         else
-            return "4,4,YELLOW";*/
-       return "";
+            return "4,4,YELLOW";
+
     }
 
     @Override
-    public String remplir(Joueur joueur) {
-        Color[][] grid = new Color[6][7];
+    public String remplir() {
+
         System.out.println("Choisir la colonne a jouer entre 1 et 6!");
         Scanner sc = new Scanner(System.in);
         int b = 0;
@@ -66,6 +66,7 @@ public class JoueurHumain extends Joueur {
     }
 
     public boolean estGagne(Joueur joueur){
+
         return true;
     }
 

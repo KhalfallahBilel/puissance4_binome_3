@@ -20,7 +20,7 @@ public abstract class Joueur {
 
 
 
-    public abstract String remplir(Joueur joueur);
+    public abstract String remplir();
 
     public abstract void recevoir(String messageRecu);
 }
