@@ -18,5 +18,7 @@ public abstract class Joueur {
 
     public abstract String envoyer();
 
+    public abstract String remplir();
+
     public abstract void recevoir(String messageRecu);
 }
