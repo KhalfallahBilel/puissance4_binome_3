@@ -12,15 +12,15 @@ public abstract class Joueur {
         this.board = board;
     }
 
-    public abstract String remplirCase();
-    //public abstract boolean verifDispo();
+
+
 
 
     public abstract String envoyer();
 
 
 
-    public abstract String remplir();
+
 
     public abstract void recevoir(String messageRecu);
 }

@@ -1,13 +1,10 @@
 package fr.formation.puissance4.Joueur;
 
 import fr.formation.puissance4.Board.Board;
-import fr.formation.puissance4.Game;
+import fr.formation.puissance4.Exception.ColonneRemplieException;
 import fr.formation.puissance4.Piece.Jeton;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class JoueurHumain extends Joueur {
@@ -23,49 +20,73 @@ public class JoueurHumain extends Joueur {
         super(color, board);
     }
 
-    @Override
-    public String remplirCase() {
-        return null;
-    }
 
-    /*@Override
-    public boolean verifDispo() {
-        if(board.getJetons().equals(color.TRANSPARENT))
-        { return false;}
-        return true;
-    }*/
+
 
     @Override
     public String envoyer() {
-        if (Color.RED.equals(color))
-            return "4,4,RED";
-        else
-            return "4,4,YELLOW";
+        int colonne = remplirColonne();
+
+        int ligne =0;
+
+        try {
+
+            ligne = remplirLigne(colonne);
+
+        } catch (ColonneRemplieException e) {
+
+            e.printStackTrace();
+
+        }
+     board.getJetons()[ligne][colonne].setColor(color);
+        return ligne+","+colonne+","+defCouleur();
 
     }
 
-    @Override
-    public String remplir() {
+    public String defCouleur(){
+        if (color.equals(Color.RED)){
+            return "RED";}
 
-        System.out.println("Choisir la colonne a jouer entre 1 et 6!");
-        Scanner sc = new Scanner(System.in);
-        int b = 0;
-        while (b < 7 && b > 0) {
-            sc.next();
-            int a = Integer.parseInt(sc.next());
+        else {return "YELLOW";}
+    }
 
-            for (int i = 0; i < 6; i++) {
-                if(board.getJetons()[i][a-1]==null){
-                    board.getJetons()[i][a-1].setColor(color);
+    //Le systeme demande de choisir une case a jouer
+    public int remplirColonne() {
+
+        System.out.println("Veuillez entrer un numero de colonne entre 1 et 6: ");
+
+        Scanner scan = new Scanner(System.in);
+
+        return scan.nextInt() - 1;
+
+
+    }
+
+    //le systeme vérifie si la case est vide ou pas
+    public int remplirLigne(int colonne) throws ColonneRemplieException {
+
+        int ligne;
+
+        for (ligne = -1; ligne < board.getJetons().length; ligne++) {
+
+            if (!board.getJetons()[ligne + 1][colonne].getColor().equals(Color.TRANSPARENT)) {
+                if (ligne == -1) {
+
+                    throw new ColonneRemplieException();
+
                 }
 
+                return ligne;
+
             }
-            return "YELLOW";
+
         }
-        return "YELLOW";
+
+        return ligne;
+
     }
 
-    public boolean estGagne(Joueur joueur){
+    public boolean estGagne(Joueur joueur) {
 
         return true;
     }
