@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd4affa3-be9f-4c85-b000-2f92045d937f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Joueur/JoueurRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/puissance4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/puissance4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Socket/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Socket/Serveur.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd4affa3-be9f-4c85-b000-2f92045d937f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +23,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="646">
               <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
             </state>
           </provider>
@@ -40,8 +32,8 @@
       <file leaf-file-name="JoueurRobot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Joueur/JoueurRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            <state relative-caret-position="417">
+              <caret line="70" column="73" lean-forward="true" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#281#282#0" expanded="true" />
@@ -56,8 +48,8 @@
       <file leaf-file-name="Serveur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Socket/Serveur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="167">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -85,10 +77,10 @@
       <list>
         <option value="$PROJECT_DIR$/../../../../../.gitignore" />
         <option value="$PROJECT_DIR$/Socket/Client.java" />
-        <option value="$PROJECT_DIR$/Socket/Serveur.java" />
         <option value="$PROJECT_DIR$/Game.java" />
         <option value="$PROJECT_DIR$/Joueur/JoueurHumain.java" />
         <option value="$PROJECT_DIR$/Joueur/JoueurRobot.java" />
+        <option value="$PROJECT_DIR$/Socket/Serveur.java" />
       </list>
     </option>
   </component>
@@ -261,12 +253,12 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32881" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32881" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21979167" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21979167" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -320,20 +312,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Socket/Serveur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Socket/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -359,10 +337,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Socket/Serveur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Joueur/JoueurRobot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="417">
+          <caret line="70" column="73" lean-forward="true" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
