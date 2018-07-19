@@ -5,6 +5,7 @@ import fr.formation.puissance4.Exception.ColonneRemplieException;
 import fr.formation.puissance4.Piece.Jeton;
 import javafx.scene.paint.Color;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -72,16 +73,22 @@ colonne=remplirColonne();
     }
 
     //le systeme vérifie si la case est vide ou pas
-    public int remplirLigne(int colonne) throws ColonneRemplieException {
+    public int remplirLigne(int colonne)throws ColonneRemplieException{
 
         int ligne;
 
         for (ligne = -1; ligne < board.getJetons().length - 1; ligne++) {
 
             if (!board.getJetons()[ligne + 1][colonne].getColor().equals(Color.TRANSPARENT)) {
-                if (ligne == -1) {
-                    System.out.println("Colonne reservé déja !!");
-                    throw new ColonneRemplieException();
+                try {
+                    if (ligne == -1) {
+
+
+                        throw new ColonneRemplieException("Colonne reservé déja !!");
+
+                    }
+                }catch(ColonneRemplieException e){
+                    System.out.println("Colonne pleine !!");
 
                 }
 
