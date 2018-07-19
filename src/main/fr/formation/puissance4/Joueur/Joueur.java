@@ -12,15 +12,7 @@ public abstract class Joueur {
         this.board = board;
     }
 
-
-
-
-
     public abstract String envoyer();
-
-
-
-
 
     public abstract void recevoir(String messageRecu);
 }
