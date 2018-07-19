@@ -28,11 +28,14 @@ public class JoueurHumain extends Joueur {
             try {
                 colonne = remplirColonne();
                 ligne = remplirLigne(colonne);
+                board.getJetons()[ligne][colonne].setColor(color);
+                if (gagne(ligne, colonne)) {
+                    return "Fin";
+                }
             } catch (ColonneRemplieException e) {
                 e.printStackTrace();
             }
         } while (ligne == -1 || colonne == -1);
-        board.getJetons()[ligne][colonne].setColor(color);
         return ligne + "," + colonne + "," + defCouleur();
     }
 
@@ -58,6 +61,7 @@ public class JoueurHumain extends Joueur {
                 a = -1;
             }
         } while (!verifColonne(a));
+
 
         return a;
     }
@@ -89,6 +93,101 @@ public class JoueurHumain extends Joueur {
             return false;
     }
 
+    public boolean checkHor(int ligne, int colonne) {
+        int cpt = 0;
+        int i = 1, j = 1;
+
+        do {
+            if (colonne + i < board.getJetons()[ligne].length &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne][colonne + i].getColor())) {
+                i++;
+                cpt++;
+            } else if (colonne - j >= 0 &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne][colonne - j].getColor())) {
+                j++;
+                cpt++;
+            } else return false;
+        } while (cpt < 3);
+        return true;
+    }
+
+    public boolean checkVer(int ligne, int colonne) {
+        int cpt = 0;
+        int i = 1;
+        do {
+            if (ligne + i < board.getJetons().length &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne + i][colonne].getColor())) {
+                cpt++;
+                i++;
+            } else return false;
+
+        } while (cpt < 3);
+        return true;
+    }
+
+    public boolean checkDiag1(int ligne, int colonne) {
+        int cpt = 0;
+        int i = 1, j = 1;
+
+        do {
+            if (colonne + i < board.getJetons()[ligne].length && ligne + i < board.getJetons().length &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne + i][colonne + i].getColor())) {
+                i++;
+
+                cpt++;
+            } else if (colonne - j >= 0 && ligne - j >= 0 &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne - j][colonne - j].getColor())) {
+                j++;
+                cpt++;
+            /*} else if (colonne - j >= 0 &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne-i][colonne - j].getColor())) {
+                j++;
+                i++;
+                cpt++;
+            }
+            else if (colonne + i < board.getJetons()[ligne].length &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne+i][colonne - j].getColor())) {
+                i++;
+                j++;
+                cpt++;
+            } else if (colonne - j >= 0 &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne-i][colonne + j].getColor())) {
+                j++;
+                i++;
+                cpt++;*/
+            } else return false;
+        } while (cpt < 3);
+        return true;
+    }
+
+    public boolean checkDiag2(int ligne, int colonne) {
+        int cpt = 0;
+        int i = 1, j = 1;
+
+        do {
+            if (colonne - i >= 0 && ligne + i < board.getJetons().length &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne + i][colonne - i].getColor())) {
+                i++;
+
+                cpt++;
+            } else if (colonne + j < board.getJetons()[ligne].length && ligne - j >= 0 &&
+                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne - j][colonne + j].getColor())) {
+                j++;
+                cpt++;
+
+            } else return false;
+        } while (cpt < 3);
+        return true;
+    }
+
+    public boolean gagne(int ligne, int colonne) {
+        if (checkHor(ligne, colonne) || checkVer(ligne, colonne) || checkDiag1(ligne, colonne)|| checkDiag2(ligne, colonne)) {
+            System.out.println("vous avez gagné");
+            return true;
+
+        }
+        return false;
+    }
 
     @Override
     public void recevoir(String messageRecu) {
