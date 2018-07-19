@@ -37,7 +37,7 @@ public class JoueurRobot extends Joueur {
             } catch (ColonneRemplieException e) {
                 e.printStackTrace();
             }
-        }while (ligne==-1|| colonne==0);
+        }while (ligne==-1 || colonne==-1);
         board.getJetons()[ligne][colonne].setColor(color);
         return ligne + "," + colonne + "," +defCouleur();
     }
@@ -85,7 +85,7 @@ public class JoueurRobot extends Joueur {
         return ligne;
     }
     public boolean verifColonne(int colonne) {
-        if (colonne > -1 && colonne < 7) {
+        if (colonne > 0 && colonne < 8) {
             return true;
         } else
             return false;
