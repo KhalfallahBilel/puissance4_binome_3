@@ -35,14 +35,26 @@ public class JoueurRobot extends Joueur {
                 colonne = remplirColonne();
                 ligne = remplirLigne(colonne);
                 board.getJetons()[ligne][colonne].setColor(color);
-                if (gagne(ligne, colonne)) {
+                if (gagne(ligne, colonne)||!checkPleine(ligne,colonne)) {
                     return "Fin";
                 }
-            } catch (ColonneRemplieException e) {
-                e.printStackTrace();
+            } catch (ColonneRemplieException | ArrayIndexOutOfBoundsException e) {
+                System.out.println("EREUR >" + e.getMessage());
+                //e.printStackTrace();
             }
         } while (ligne == -1 || colonne == -1);
         return ligne + "," + colonne + "," + defCouleur();
+    }
+
+    public boolean checkPleine(int ligne, int colonne) {
+        for (int i = 0; i < board.getJetons()[ligne].length; i++) {
+            for (int j = 0; j < board.getJetons()[colonne].length; j++) {
+                if (board.getJetons()[i][j].getColor().equals(color.TRANSPARENT)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -52,6 +64,7 @@ public class JoueurRobot extends Joueur {
         int colonne = Integer.parseInt(strings[1]);
         board.getJetons()[ligne][colonne].setColor(Color.valueOf(strings[2]));
     }
+
     public String defCouleur() {
         if (color.equals(Color.RED)) {
             return "RED";
@@ -59,17 +72,19 @@ public class JoueurRobot extends Joueur {
             return "YELLOW";
         }
     }
+
     //Le systeme va choisir une colonne aléatoire
     public int remplirColonne() {
-            Random random = new Random();
-        int a = random.nextInt(8-1);
+        Random random = new Random();
+        int a = random.nextInt(8 - 1);
         do {
 
-            System.out.println("le Robot joue dans la colonne : "+a);
+            System.out.println("le Robot joue dans la colonne : " + a);
         } while (!verifColonne(a));
 
         return a;
     }
+
     //le systeme vérifie si la case est vide ou pas
     public int remplirLigne(int colonne) throws ColonneRemplieException {
         int ligne;
@@ -87,12 +102,14 @@ public class JoueurRobot extends Joueur {
         }
         return ligne;
     }
+
     public boolean verifColonne(int colonne) {
         if (colonne > -1 && colonne < 7) {
             return true;
         } else
             return false;
     }
+
     public boolean checkHor(int ligne, int colonne) {
         int cpt = 0;
         int i = 1, j = 1;
@@ -166,7 +183,7 @@ public class JoueurRobot extends Joueur {
     }
 
     public boolean gagne(int ligne, int colonne) {
-        if (checkHor(ligne, colonne) || checkVer(ligne, colonne) || checkDiag1(ligne, colonne)|| checkDiag2(ligne, colonne)) {
+        if (checkHor(ligne, colonne) || checkVer(ligne, colonne) || checkDiag1(ligne, colonne) || checkDiag2(ligne, colonne)) {
             System.out.println("vous avez gagné");
             return true;
 

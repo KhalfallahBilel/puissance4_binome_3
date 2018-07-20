@@ -32,7 +32,7 @@ public class JoueurHumain extends Joueur {
                 if (gagne(ligne, colonne)) {
                     return "Fin";
                 }
-            } catch (ColonneRemplieException e) {
+            } catch (ColonneRemplieException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
         } while (ligne == -1 || colonne == -1);
