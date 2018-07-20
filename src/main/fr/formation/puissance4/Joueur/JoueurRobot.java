@@ -28,18 +28,19 @@ public class JoueurRobot extends Joueur {
 
     @Override
     public String envoyer() {
-        int colonne;
+        int colonne = -1;
         int ligne = -1;
         do {
             colonne=remplirColonne();
             try {
-                ligne=remplirLigne(colonne);
+                colonne = remplirColonne();
+                ligne = remplirLigne(colonne);
             } catch (ColonneRemplieException e) {
                 e.printStackTrace();
             }
-        }while (ligne==-1 || colonne==-1);
+        } while (ligne == -1 || colonne == -1);
         board.getJetons()[ligne][colonne].setColor(color);
-        return ligne + "," + colonne + "," +defCouleur();
+        return ligne + "," + colonne + "," + defCouleur();
     }
 
     @Override
@@ -59,7 +60,7 @@ public class JoueurRobot extends Joueur {
     //Le systeme va choisir une colonne aléatoire
     public int remplirColonne() {
             Random random = new Random();
-        int a = random.nextInt(7-1)+1;
+        int a = random.nextInt(8-1);
         do {
 
             System.out.println("le Robot joue dans la colonne : "+a);
@@ -85,9 +86,10 @@ public class JoueurRobot extends Joueur {
         return ligne;
     }
     public boolean verifColonne(int colonne) {
-        if (colonne > 0 && colonne < 8) {
+        if (colonne > -1 && colonne < 7) {
             return true;
         } else
             return false;
     }
+
 }
