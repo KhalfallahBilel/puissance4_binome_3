@@ -139,22 +139,7 @@ public class JoueurHumain extends Joueur {
                     board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne - j][colonne - j].getColor())) {
                 j++;
                 cpt++;
-            /*} else if (colonne - j >= 0 &&
-                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne-i][colonne - j].getColor())) {
-                j++;
-                i++;
-                cpt++;
-            }
-            else if (colonne + i < board.getJetons()[ligne].length &&
-                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne+i][colonne - j].getColor())) {
-                i++;
-                j++;
-                cpt++;
-            } else if (colonne - j >= 0 &&
-                    board.getJetons()[ligne][colonne].getColor().equals(board.getJetons()[ligne-i][colonne + j].getColor())) {
-                j++;
-                i++;
-                cpt++;*/
+           
             } else return false;
         } while (cpt < 3);
         return true;
